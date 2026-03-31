@@ -15,7 +15,7 @@ import com.quickpoll.entity.PollOptions;
 import com.quickpoll.service.PollOptionsService;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class PollOptionsController {
 	
 	@Autowired

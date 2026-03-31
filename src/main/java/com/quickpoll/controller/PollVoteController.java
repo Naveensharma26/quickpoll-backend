@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.quickpoll.entity.PollVote;
 import com.quickpoll.service.PollVoteService;
 
-@CrossOrigin
+@CrossOrigin(origins = "*")
 @RestController
 public class PollVoteController {
 
