@@ -25,5 +25,6 @@ public class Polls {
 	String created_by;
 	String created_at;
 	String is_anonymous;
+	String is_public;
 	
 }

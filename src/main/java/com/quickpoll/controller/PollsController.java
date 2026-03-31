@@ -23,6 +23,11 @@ public class PollsController {
 	@Autowired
 	PollsService service;
 	
+	@GetMapping("/ping")
+	public String ping() {
+	    return "OK";
+	}
+	
 	@PostMapping("/addPoll")
 	public Polls addPoll(@RequestBody Polls p){
 		return service.addPoll(p);
