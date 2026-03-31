@@ -1,27 +1,18 @@
 package com.quickpoll.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Polls {
+public class PollsResponse {
 
-	@Id
-	String poll_id;
-	
+	String poll_id;	
 	String poll_name;
-	@JsonIgnore
-	String password;
 	String poll_question;
 	String created_by;
 	String created_at;

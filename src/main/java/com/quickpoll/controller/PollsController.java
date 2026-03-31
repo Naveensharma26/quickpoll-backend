@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.quickpoll.entity.Polls;
+import com.quickpoll.entity.PollsResponse;
 import com.quickpoll.repo.PollsRepo;
 import com.quickpoll.service.PollsService;
 
@@ -26,15 +27,15 @@ public class PollsController {
 	public Polls addPoll(@RequestBody Polls p){
 		return service.addPoll(p);
 	}
-
-	@GetMapping("/getAllPolls")
-	public List<Polls> getAllPolls(){
-		return service.getAllPolls();
-	}
 	
 	@GetMapping("/getPollById/{id}")
-	public Polls getPollById(@PathVariable String id) {
+	public PollsResponse getPollById(@PathVariable String id) {
 		return service.getPollById(id);
 	}	
+	
+	@PostMapping("/verifyUser")
+	public boolean verifyUser(@RequestBody Polls p) {
+		return service.verifyUser(p.getPoll_id(), p.getPassword());
+	}
 	
 }
