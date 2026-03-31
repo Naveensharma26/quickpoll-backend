@@ -47,4 +47,20 @@ public class PollsService {
 		
 	}
 	
+	public List<PollsResponse> getTrendingPolls(){
+		List<Polls> list = pr.findTopPublicPolls();
+		List<PollsResponse> responseList = list.stream().map(p -> {
+	        PollsResponse resp = new PollsResponse();
+	        resp.setPoll_id(p.getPoll_id());
+	        resp.setPoll_name(p.getPoll_name());
+	        resp.setPoll_question(p.getPoll_question());
+	        resp.setCreated_by(p.getCreated_by());
+	        resp.setCreated_at(p.getCreated_at());
+	        resp.setIs_anonymous(p.getIs_anonymous());
+	        resp.setIs_public(p.getIs_public());
+	        return resp;
+	    }).toList();
+		return responseList;
+	}
+	
 }

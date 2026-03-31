@@ -43,4 +43,9 @@ public class PollsController {
 		return service.verifyUser(p.getPoll_id(), p.getPassword());
 	}
 	
+	@GetMapping("/getTrendingPolls")
+	public List<PollsResponse> getTrendingPolls(){
+		return service.getTrendingPolls();
+	}
+	
 }
