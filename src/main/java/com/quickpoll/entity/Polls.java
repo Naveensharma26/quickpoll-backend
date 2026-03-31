@@ -20,7 +20,6 @@ public class Polls {
 	String poll_id;
 	
 	String poll_name;
-	@JsonIgnore
 	String password;
 	String poll_question;
 	String created_by;
