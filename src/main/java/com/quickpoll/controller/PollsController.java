@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.quickpoll.entity.PollTrend;
 import com.quickpoll.entity.Polls;
 import com.quickpoll.entity.PollsResponse;
 import com.quickpoll.repo.PollsRepo;
@@ -44,7 +45,7 @@ public class PollsController {
 	}
 	
 	@GetMapping("/getTrendingPolls")
-	public List<PollsResponse> getTrendingPolls(){
+	public List<PollTrend> getTrendingPolls(){
 		return service.getTrendingPolls();
 	}
 	

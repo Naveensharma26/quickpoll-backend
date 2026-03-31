@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.quickpoll.entity.PollTrend;
 import com.quickpoll.entity.Polls;
 import com.quickpoll.entity.PollsResponse;
 import com.quickpoll.repo.PollsRepo;
@@ -47,17 +48,14 @@ public class PollsService {
 		
 	}
 	
-	public List<PollsResponse> getTrendingPolls(){
-		List<Polls> list = pr.findTopPublicPolls();
-		List<PollsResponse> responseList = list.stream().map(p -> {
-	        PollsResponse resp = new PollsResponse();
+	public List<PollTrend> getTrendingPolls(){
+		List<PollTrend> list = pr.findTopPublicPolls();
+		List<PollTrend> responseList = list.stream().map(p -> {
+			PollTrend resp = new PollTrend();
 	        resp.setPoll_id(p.getPoll_id());
-	        resp.setPoll_name(p.getPoll_name());
 	        resp.setPoll_question(p.getPoll_question());
-	        resp.setCreated_by(p.getCreated_by());
-	        resp.setCreated_at(p.getCreated_at());
-	        resp.setIs_anonymous(p.getIs_anonymous());
-	        resp.setIs_public(p.getIs_public());
+	        resp.setTotal_votes(p.getTotal_votes());
+	        resp.setPoll_name(p.getPoll_name());
 	        return resp;
 	    }).toList();
 		return responseList;
