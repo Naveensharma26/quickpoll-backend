@@ -1,5 +1,6 @@
 package com.quickpoll.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ public class PollsService {
 	public Polls addPoll(Polls p) {
 		String hashedPassword = encoder.encode(p.getPassword());
 		p.setPassword(hashedPassword);
+		p.setCreatedAt(LocalDateTime.now());
 		Polls resp = pr.save(p);
 		return resp;
 	} 
@@ -33,12 +35,12 @@ public class PollsService {
 		if (p == null) {
 			return null; 
 	    }
-		resp.setIs_anonymous(p.getIs_anonymous());
-		resp.setCreated_at(p.getCreated_at());
-		resp.setCreated_by(p.getCreated_by());
-		resp.setPoll_id(p.getPoll_id());
-		resp.setPoll_name(p.getPoll_name());
-		resp.setPoll_question(p.getPoll_question());
+		resp.setIsAnonymous(p.getIsAnonymous());
+		resp.setCreatedAt(p.getCreatedAt().toString());
+		resp.setCreatedBy(p.getCreatedBy());
+		resp.setPollId(p.getPollId());
+		resp.setPollName(p.getPollName());
+		resp.setPollQuestion(p.getPollQuestion());
 		return resp;
 	}
 	

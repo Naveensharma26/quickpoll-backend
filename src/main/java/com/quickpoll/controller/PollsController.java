@@ -41,7 +41,7 @@ public class PollsController {
 	
 	@PostMapping("/verifyUser")
 	public boolean verifyUser(@RequestBody Polls p) {
-		return service.verifyUser(p.getPoll_id(), p.getPassword());
+		return service.verifyUser(p.getPollId(), p.getPassword());
 	}
 	
 	@GetMapping("/getTrendingPolls")

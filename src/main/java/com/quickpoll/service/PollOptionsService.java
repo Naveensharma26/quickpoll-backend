@@ -23,9 +23,9 @@ public class PollOptionsService {
 	}
 	
 	public PollOptions updateCount(PollOptions p) {
-		PollOptions exist = repo.findById(p.getPoll_options_id()).orElse(null);
+		PollOptions exist = repo.findById(p.getPollOptionsId()).orElse(null);
 		if(exist!=null) {
-			exist.setVote_count(p.getVote_count());
+			exist.setVoteCount(p.getVoteCount());
 			exist = repo.save(exist);
 		}
 		return exist;

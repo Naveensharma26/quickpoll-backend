@@ -19,13 +19,13 @@ public class PollVote {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	Integer poll_vote_id;
+	Integer pollVoteId;
 	
-	@Column(name = "poll_id")
 	String pollId;
 	
-	String poll_option_name;
-	int poll_option_id;
-	String voted_by;
+	String pollOptionName;
+	
+	int pollOptionsId;
+	String votedBy;
 	
 }

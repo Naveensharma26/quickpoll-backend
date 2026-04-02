@@ -1,5 +1,7 @@
 package com.quickpoll.entity;
 
+import java.time.LocalDateTime;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
@@ -17,14 +19,15 @@ import lombok.Setter;
 public class Polls {
 
 	@Id
-	String poll_id;
+	String pollId;
 	
-	String poll_name;
+	String pollName;
 	String password;
-	String poll_question;
-	String created_by;
-	String created_at;
-	String is_anonymous;
-	String is_public;
+	String pollQuestion;
+	String createdBy;
+	LocalDateTime createdAt;
+	String isAnonymous;
+	String isPublic;
+	LocalDateTime expiresAt;
 	
 }

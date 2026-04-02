@@ -11,12 +11,12 @@ import lombok.Setter;
 @Setter
 public class PollsResponse {
 
-	String poll_id;	
-	String poll_name;
-	String poll_question;
-	String created_by;
-	String created_at;
-	String is_anonymous;
-	String is_public;
-	
+	String pollId;	
+	String pollName;
+	String pollQuestion;
+	String createdBy;
+	String createdAt;
+	String isAnonymous;
+	String isPublic;
+	String expiresAt;
 }

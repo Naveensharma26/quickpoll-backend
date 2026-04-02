@@ -20,5 +20,7 @@ public interface PollsRepo extends JpaRepository<Polls,String>{
             "ORDER BY SUM(po.vote_count) DESC " +
             "LIMIT 5", nativeQuery = true)
     List<PollTrend> findTopPublicPolls();
+	
+	Polls findByPollId(String pollId);
 
 }

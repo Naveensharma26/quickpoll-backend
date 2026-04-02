@@ -19,13 +19,12 @@ public class PollOptions {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer poll_options_id;
+	Integer pollOptionsId;
 	
-	@Column(name = "poll_id")
 	String pollId;
 	
 	
-	String poll_option_name;
-	int vote_count;
+	String pollOptionName;
+	int voteCount;
 	
 }

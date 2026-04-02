@@ -10,5 +10,6 @@ import com.quickpoll.entity.PollVote;
 public interface PollVoteRepo extends JpaRepository<PollVote, Integer>{
 	
 	public List<PollVote> getPollVoteByPollId(String pollId);
+	
 
 }

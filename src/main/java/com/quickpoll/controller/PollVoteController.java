@@ -3,6 +3,7 @@ package com.quickpoll.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,6 +29,12 @@ public class PollVoteController {
 	@GetMapping("/getVoteResult/{id}")
 	public List<PollVote> getVoteResult(@PathVariable String id){
 		return service.getPollResult(id);
+	}
+	
+	@PostMapping("/vote")
+	public ResponseEntity<?> vote(@RequestBody PollVote pv) {
+	    service.vote(pv);
+	    return ResponseEntity.ok("Vote recorded");
 	}
 	
 }
