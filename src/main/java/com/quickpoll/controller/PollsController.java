@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.quickpoll.entity.PollRequest;
 import com.quickpoll.entity.Polls;
 import com.quickpoll.entity.PollsResponse;
 import com.quickpoll.repo.PollTrend;
@@ -30,7 +31,7 @@ public class PollsController {
 	}
 	
 	@PostMapping("/addPoll")
-	public Polls addPoll(@RequestBody Polls p){
+	public Polls addPoll(@RequestBody PollRequest p){
 		return service.addPoll(p);
 	}
 	

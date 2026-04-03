@@ -7,18 +7,18 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
-public class PollsResponse {
-
-	String pollId;	
+@NoArgsConstructor
+@AllArgsConstructor
+public class PollRequest {
+	String pollId;
 	String pollName;
+	String password;
 	String pollQuestion;
 	String createdBy;
 	LocalDateTime createdAt;
 	String isAnonymous;
 	String isPublic;
-	LocalDateTime expiresAt;
+	Long duration;
 }
